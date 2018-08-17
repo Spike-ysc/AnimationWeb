@@ -1,0 +1,257 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="news-bg-div">
+
+    <div class="container">
+
+        <h2>精选新闻<span style="float:right;"><h4>@Html.ActionLink("查看全部", "NewsIndex", "News", new { area = "News" }, new { @class = "new-a ", target = "_blank" })</h4></span></h2>
+
+        <div class="news-div row">
+
+            <div class="col-md-2 hidden-xs hidden-sm  text-center">
+                <a class="news-a" href="/Home/ToMsg?Msgid=NewsMsgIndex">
+                    <img src="~/Images/yanhua.jpg" style="width:65%" alt="" />
+                </a>
+            </div>
+            <div class="col-md-9 col-sm-12 col-xs-12">
+                <!-- http://finance.jrj.com.cn/tech/2017/11/09095823360906.shtml -->
+                <a href="/Home/ToMsg?Msgid=NewsMsgIndex" class="news-a">
+                    <h2>日本动画电影《烟花》国内定档12月1日 岩井俊二名作改编</h2>
+                </a>
+                <p>2017-11-09 09:58:47</p>
+                <h4 class="hidden-xs">
+                    DoNews互娱11月9日消息（记者 王诗诗）日本动画电影《烟花》确定将于12月1日登陆内地院线。
+                    <br> 动画改编自岩井俊二1995年上映的电影《烟花》，动画在原作基础上加入原创故事。
+                </h4>
+            </div>
+
+        </div>
+        <div class="news-div row">
+
+            <div class="col-md-2 hidden-xs hidden-sm  text-center">
+                <a class="news-a" href="#">
+                    <img src="~/Images/nixiang.jpeg" style="width:65%" alt="" />
+                </a>
+            </div>
+            <!-- http://www.sohu.com/a/203087936_260616 -->
+            <div class="col-md-9">
+                <a href="#" class="news-a">
+                    <h2>宫崎骏七次撤回隐退宣言，这次要制作一部怎样的动画</h2>
+                </a>
+                <p>2017-11-08 15:57</p>
+                <h4  class="hidden-xs">
+                    日前，在早稻田大学举行的漱石山房纪念馆开馆纪念活动上，76岁的日本动画监督宫崎骏亲自表明，正在制作的新作名为《你们想活出怎样的人生》（君たちはどう生きるか），取材自吉野源三郎1937年发表的同名小说。
+                </h4>
+            </div>
+
+        </div>
+        <div class="news-div row">
+
+            <div class="col-md-2 hidden-xs hidden-sm  text-center ">
+                <a class="news-a" href="#">
+                    <img src="~/Images/pikeqiu.jpg" style="width:65%" alt="" />
+                </a>
+            </div>
+            <!-- http://www.tianjinwe.com/entertainment/mxxw/201711/t20171101_1219407.html -->
+            <div class="col-md-9">
+                <a href="#" class="news-a">
+                    <h2>日本动画电影《精灵宝可梦》11月11日中国上映</h2>
+                </a>
+                <p>2017-11-01 09:22:00 </p>
+                <h4  class="hidden-xs">
+                    城市快报报道 记者 崔巧琳 据悉，日本动画电影《精灵宝可梦：波尔凯尼恩与机巧的玛机雅娜》（简称《精灵宝可梦》）将于11月11日在中国内地上映。
+                </h4>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<!-- 作品版块  分为两部分，一部分在sm以上显示，另一部分在sm及以下显示    -->
+<h1 class="zhuti">精选作品<span style="float:right;"><h4>@Html.ActionLink("查看全部", "WorkIndex", "Work", new { area = "Works" }, new { @class = "news-a", target = "_blank" })</h4></span></h1>
+
+<!-- sm以上显示模块 -->
+<div class="key-div container  hidden-xs hidden-sm">
+    <div class="head-div  col-md-6 col-5-padding">
+        <img class="head-bg-img" src="~/Images/miaosu.png" alt="">
+        <div class="head-black-bg"></div>
+        <p class="head-p">
+            秒速五厘米
+            <small>(2012)</small>
+        </p>
+        <h5>导演：新海诚</h5>
+    </div>
+    <div class="head-div  col-md-3 col-5-padding">
+        <img class="head-bg-img" src="~/Images/Totoro.png" alt="">
+        <div class="head-black-bg"></div>
+        <p class="head-p">
+            龙猫
+            <small>(1988)</small>
+        </p>
+        <h5>导演：宫崎骏</h5>
+    </div>
+    <div class="head-div  col-md-3 col-5-padding">
+        <img class="head-bg-img" src="~/Images/xiari.png" alt="">
+        <div class="head-black-bg"></div>
+        <p class="head-p">
+            夏日大作战
+            <small>(2010)</small>
+        </p>
+        <h5>导演：细田守</h5>
+    </div>
+
+
+</div>
+
+<div class="key-div container center-block hidden-xs hidden-sm">
+    <div class="head-div col-md-3 col-5-padding">
+        <img class="head-bg-img" src="~/Images/猫的报恩.jpg" alt="">
+        <div class="head-black-bg"></div>
+        <p class="head-p">
+            猫的报恩
+            <small>(2002)</small>
+        </p>
+        <h5>导演：森田宏幸</h5>
+    </div>
+    <a href="/Home/ToMsg?Msgid=theme1">
+        <div class="head-div col-md-3 col-5-padding">
+            <img class="head-bg-img" src="~/Images/cyskdsn.jpg" alt="">
+            <div class="head-black-bg"></div>
+            <p class="head-p">
+                穿越时空的少女
+                <small>(2015)</small>
+            </p>
+            <h5>导演：细田守</h5>
+        </div>
+    </a>
+    <div class="head-div col-md-6 col-5-padding">
+        <img class="head-bg-img" src="~/Images/盗梦侦探.jpg" alt="">
+        <div class="head-black-bg"></div>
+        <p class="head-p">
+            盗梦侦探
+            <small>(2006)</small>
+        </p>
+        <h5>导演：今敏</h5>
+    </div>
+
+</div>
+
+<!-- sm以及以下显示 -->
+<!-- visible-xs-block and visible-sm-block -->
+<div class="list-group visible-xs-block visible-sm-block">
+    <div class="col-sm-4 col-xs-6 " style="margin-bottom:15px;">
+        <img class="img-responsive" width="95%" src="~/Images/mswlm.jpg" alt="">
+        <h3>
+            秒速五厘米
+            <small>(2012)</small>
+        </h3>
+        <h5>导演：新海诚</h5>
+    </div>
+    <div class="col-sm-4 col-xs-6" style="margin-bottom:15px;">
+        <img class="img-responsive" width="95%" src="~/Images/lm.jpg" alt="">
+        <h3>
+            龙猫
+            <small>(1988)</small>
+        </h3>
+        <h5>导演：宫崎骏</h5>
+    </div>
+    <div class="col-sm-4 col-xs-6" style="margin-bottom:15px;">
+        <img class="img-responsive" width="95%" src="~/Images/xiari.png" alt="">
+        <h3>
+            夏日大作战
+            <small>(2010)</small>
+        </h3>
+        <h5>导演：细田守</h5>
+    </div>
+    <div class="col-sm-4 col-xs-6" style="margin-bottom:15px;">
+        <img class="img-responsive" width="95%" src="~/Images/mdbe.jpg" alt="">
+        <h3>
+            猫的报恩
+            <small>(2002)</small>
+        </h3>
+        <h5>导演：森田宏幸</h5>
+    </div>
+    <div class="col-sm-4 col-xs-6" style="margin-bottom:15px;">
+        <img class="img-responsive" width="95%" src="~/Images/dmzt.jpg" alt="">
+        <h3>
+            盗梦侦探
+            <small>(2006)</small>
+        </h3>
+        <h5>导演：今敏</h5>
+    </div>
+    <div class="col-sm-4 col-xs-6" style="margin-bottom:15px;">
+        <img class="img-responsive" width="95%" src="~/Images/cysk.jpg" alt="">
+        <h3>
+            穿越时空的少女
+            <small>(2015)</small>
+        </h3>
+        <h5>导演：细田守</h5>
+    </div>
+   
+
+
+</div>
+
+
+
+<!-- 主题部分 -->
+<h1 class="zhuti">精选主题<span style="float:right;"><h4>@Html.ActionLink("查看全部", "ThemeIndex", "Theme", new { area = "Theme" }, new { @class = "new-a ", target = "_blank" })</h4> </span></h1>
+<div class="container-fluid fill-bg">
+
+
+
+    <div class="col-md-5 col-md-offset-1" style="padding-bottom:20px;">
+        <h3 class="hidden-xs hidden-sm">吉卜力主题</h3>
+        <h1>
+            吉卜力作品一览
+        </h1>
+        <h4 style="margin:20px 0;">
+            吉卜力工作室（スタジオジブリ，Studio Ghibli，又译知步里工作室），是一家日本的动画工作室。其动画作品以高质量著称，其细腻又富有生气、充满想象力的作品在全世界获得极高的评价。<br>
+
+        </h4>
+        <a class="btn btn-success " href="works.html">查看主题</a>
+    </div>
+    <div class="col-md-5 hidden-xs">
+
+        <img src="~/Images/qyqx.jpg" class="img-responsive col-sm-3 col-no-padding" alt="">
+        <img src="~/Images/ceqt.jpg" class="img-responsive col-sm-3  col-no-padding" alt="">
+        <img src="~/Images/xys.jpg" class="img-responsive col-sm-6  col-no-padding" alt="">
+        <img src="~/Images/maode.jpg" class="img-responsive col-sm-6  col-no-padding hidden-sm" alt="">
+        <img src="~/Images/longmao.jpg" class="img-responsive col-sm-3  col-no-padding hidden-sm" alt="">
+        <img src="~/Images/maodebaoen.jpg" class="img-responsive col-sm-3  col-no-padding hidden-sm" alt="">
+
+    </div>
+</div>
+
+<div class="container-fluid fill-bg2">
+
+    <div class="col-md-5 col-md-offset-1 hidden-xs">
+
+        <img src="~/Images/shiwu1.jpg" class="img-responsive col-sm-3 col-no-padding" alt="">
+        <img src="~/Images/shiwu4.jpg" class="img-responsive col-sm-3  col-no-padding" alt="">
+        <img src="~/Images/zaoshanghao.jpg" class="img-responsive col-sm-6  col-no-padding" alt="">
+        <img src="~/Images/lsdbh.jpg" class="img-responsive col-sm-6  col-no-padding hidden-sm" alt="">
+        <img src="~/Images/shiwu2.jpg" class="img-responsive col-sm-3  col-no-padding hidden-sm" alt="">
+        <img src="~/Images/shiwu3.jpg" class="img-responsive col-sm-3  col-no-padding hidden-sm" alt="">
+
+    </div>
+
+    <div class="col-md-5" >
+        <h3 class="hidden-xs hidden-sm">动画短片</h3>
+        <h1>
+            Ani*Kuri15
+            <small>(2007)</small>
+        </h1>
+        <h4 style="margin:20px 0;">
+            Ani-Kuri 15是由创作《攻壳机动队剧场版 无罪》的押井守，《红辣椒》的今敏，《恶童》的Michael L.Arias等，日本在世界上引以为傲的动画创作者们与NHK共同制作的1分钟原创动画的企画。
+        </h4>
+        <a class="btn btn-success" href="/Home/ToMsg?Msgid=theme2">查看主题</a>
+    </div>
+</div>

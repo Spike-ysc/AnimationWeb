@@ -1,0 +1,286 @@
+﻿<style>
+    .echarts-div{
+        text-align :center;
+    }
+    hr{
+        
+         margin-bottom:80px;
+    }
+</style>
+<div class="echarts-div col-sm-12">
+    <div id="main" style="width: 100%;height:400px;"></div>
+    <h3>网页浏览次数统计</h3>
+</div>
+
+<hr class="col-sm-11" />
+<div class="echarts-div col-sm-12">
+    <div id="main2" style="width: 100%;height:400px;"></div>
+    <h3>在线人数动态统计</h3>
+</div>
+
+<hr class="col-sm-11" />
+<div class="echarts-div col-sm-12">
+    <div id="main3" style="width: 100%;height:400px;"></div>
+    <h3>用户年龄统计</h3>
+</div>
+
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var uploadedDataURL = "/asset/get/s/data-1482228126093-SJLj-tUNe.png";
+
+        var percentage = [0.58, 0.24, 0.16, 0.02];
+        var radius = [0.4];
+        for (var i = 1; i < percentage.length; ++i) {
+            radius.push(radius[0] / Math.sqrt(percentage[0] / percentage[i]));
+        }
+        var colors = ['#ec5845', '#f28a7d', '#fbdcd8', '#fff'];
+        var labels = ['≥50次：58%', '≥30次：24%', '≥10次：16%', '0：2%'];
+        var left = 0.3;
+
+        var series = [{
+            type: 'pie',
+            radius: [30, '40%'],
+            center: ['50%', 160],
+            roseType: 'radius',
+            color: ['#f2c955', '#00a69d', '#46d185', '#ec5845'],
+            data: [{
+                    value: 7,
+                    name: '作品'
+                }, {
+                    value: 12,
+                    name: '主题'
+                }, {
+                    value: 38,
+                    name: '新闻'
+                }, {
+                    value: 53,
+                    name: '登录'
+                }
+            ],
+            label: {
+                normal: {
+                    textStyle: {
+                        color: '#333',
+                        fontSize: 16
+                    },
+                    formatter: function (param) {
+                        console.log(param);
+                        return param.name + ':\n' + param.value + '%';
+                    }
+                }
+            },
+            labelLine: {
+                normal: {
+                    lineStyle: {
+                        width: 2
+                    }
+                }
+            },
+            itemStyle: {
+                normal: {
+                    shadowBlur: 30,
+                    shadowColor: 'rgba(0, 0, 0, 0.4)'
+                }
+            }
+        }];
+        for (var i = 0; i < percentage.length; ++i) {
+            series.push({
+                type: 'pie',
+                silent: true,
+                name: labels[percentage.length - i - 1],
+                radius: [0, radius[i] * 100 + '%'],
+                label: {
+                    normal: {
+                        show: false,
+                    }
+                },
+                color: [colors[i]],
+                center: [(left + (-radius[i] + radius[0]) / 2) * 100 + '%', '75%'],
+                data: [{
+                    itemStyle: {
+                        normal: {
+                            color: colors[i]
+                        }
+                    }
+                }],
+                itemStyle: {
+                    normal: {
+                        shadowBlur: 30,
+                        shadowColor: 'rgba(0, 0, 0, 0.25)'
+                    }
+                }
+            });
+        }
+
+        option = {
+            legend: {
+                data: labels,
+                top: '66%',
+                left: '55%',
+                orient: 'vertical'
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    mark: {
+                        show: true
+                    },
+                    dataView: {
+                        show: true,
+                        readOnly: false
+                    },
+                    magicType: {
+                        show: true,
+                        type: ['pie', 'funnel']
+                    },
+                    restore: {
+                        show: true
+                    },
+                    saveAsImage: {
+                        show: true
+                    }
+                }
+            },
+            calculable: true,
+            series: series,
+            graphic: {
+                elements: [{
+                    type: 'image',
+                    style: {
+                        image: uploadedDataURL,
+                        width: 30,
+                        height: 30
+                    },
+                    left: 'center',
+                    top: 145
+                }]
+            }
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+
+        var myChart2 = echarts.init(document.getElementById('main2'));
+        function randomData() {
+            now = new Date(+now + oneDay);
+            value = value + Math.random() * 21 - 10;
+            return {
+                name: now.toString(),
+                value: [
+                    [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
+                    Math.round(value)
+                ]
+            }
+        }
+
+        var data = [];
+        var now = +new Date(2007, 9, 3);
+        var oneDay = 24 * 3600 * 1000;
+        var value = Math.random() * 1000;
+        for (var i = 0; i < 1000; i++) {
+            data.push(randomData());
+        }
+
+        option = {
+            title: {
+                text: '在线人数动态统计'
+            },
+            tooltip: {
+                trigger: 'axis',
+                formatter: function (params) {
+                    params = params[0];
+                    var date = new Date(params.name);
+                    return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+                },
+                axisPointer: {
+                    animation: false
+                }
+            },
+            xAxis: {
+                type: 'time',
+                splitLine: {
+                    show: false
+                }
+            },
+            yAxis: {
+                type: 'value',
+                boundaryGap: [0, '100%'],
+                splitLine: {
+                    show: false
+                }
+            },
+            series: [{
+                name: '模拟数据',
+                type: 'line',
+                showSymbol: false,
+                hoverAnimation: false,
+                data: data
+            }]
+        };
+
+        setInterval(function () {
+
+            for (var i = 0; i < 5; i++) {
+                data.shift();
+                data.push(randomData());
+            }
+
+            myChart2.setOption({
+                series: [{
+                    data: data
+                }]
+            });
+        }, 1000);
+        // 使用刚指定的配置项和数据显示图表。
+        myChart2.setOption(option);
+
+        var myChart3 = echarts.init(document.getElementById('main3'));
+     
+        option = {
+            color: ['#3398DB'],
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    data: ['<12', '12~17', '18~22', '23~27', '28~32','33~37', '>38'],
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: '人数',
+                    type: 'bar',
+                    barWidth: '60%',
+                    data: [10, 52, 200, 334, 390, 330, 220]
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart3.setOption(option);
+
+</script>
+

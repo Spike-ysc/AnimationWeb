@@ -1,0 +1,156 @@
+﻿
+@model AnimationWeb.Areas.User.Models.UserTable
+
+@{
+    var a1 = new { @class = "col-md-3 control-label" };
+    var a2 = "col-md-6";
+    var a3 = new { @class = "form-control" };
+    var a4 = new { @style = "color:red;" };
+}
+
+
+
+
+<div id="tabs" style="margin:20px;">
+    <ul>
+        <li><a href="#tabs-1">普通用户</a></li>
+        <li><a href="#tabs-2">管理员</a></li>
+    </ul>
+
+    <div class="center-block" id="tabs-1" style="width:100%">
+      <h2 class="text-center">添加普通用户</h2>
+            <div class="panel-body">
+
+
+                <form class="form-horizontal" action="AddUser" id="putong" method="post" >
+                    <div class="form-group">
+                        <label class="@a1">用户名：</label>
+                        <div class="@a2">
+                            <input class="form-control" name="userName" type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="@a1">手机号：</label>
+                        <div class="@a2">
+                            <input class="form-control" name="userPhone" type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="@a1">密码：</label>
+                        <div class="@a2">
+                            <input class="form-control" name="userPassword" type="password" />
+                        </div>
+                    </div>
+
+                    <div class="center-block text-center">
+                        <input type="submit" id="add-user" value="添加" class="btn btn-primary" />
+                        <a class="btn btn-primary" style="color:white;" href="@Url.Action("UserIndex")">取消</a>
+                    </div>
+                    <div class="center-block text-center">
+                        <p>@ViewBag.AddError</p>
+                    </div>
+                </form>
+   
+            </div>
+    </div>
+    <div id="tabs-2" class="container">
+        <h2 class="text-center">添加管理员用户</h2>
+        <div class="panel-body">
+
+   
+                <form class="form-horizontal" action="AddAdmin" method="post" id="guanliyuan">
+                    <div class="form-group">
+                        <label class="@a1">手机号：</label>
+                        <div class="@a2">
+                            <input class="form-control" name="phone" type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="@a1">密码：</label>
+                        <div class="@a2">
+                            <input class="form-control" name="password" type="password" />
+                        </div>
+                    </div>
+
+                    <div class="center-block text-center">
+                        <input type="submit" id="add-admin" value="添加" class="btn btn-primary" />
+                        <a class="btn btn-primary" style="color:white;" href="@Url.Action("UserIndex")">取消</a>
+                    </div>
+                    <div class="center-block text-center">
+                        <p>@ViewBag.AddError</p>
+                    </div>
+                </form>
+            </div>
+
+     </div>
+  
+</div>
+
+
+<script>
+
+   
+
+
+  $(function() {
+      $("#tabs").tabs();
+
+      $("#add-user").click(function () {
+          $("#putong").validate({
+              rules: {
+                  userName:{
+                      required:true,
+                      minlength: 2,
+                      maxlength: 16
+                  },
+                  userPhone: {
+                      required: true,
+                      digits: true,
+                      rangelength: [11, 11],
+                  },
+                  userPassword: { required: true, minlength: 6 }
+              },
+              messages: {
+                  userName:{
+                      required:"用户名不能为空",
+                      minlength:"用户名不能小于两个字",
+                      maxlength:"用户名不能大于十六个字",
+                  },
+                  userPhone: {
+                      required: "手机号不能为空",
+                      digits: "手机号格式错误",
+                      rangelength: "手机号长度错误",
+                  },
+                  userPassword: {
+                      required: "密码不能为空",
+                      minlength: "密码不能小于6",
+                  }
+              }
+          });
+      });
+      $("#add-admin").click(function () {
+          $("#guanliyuan").validate({
+              rules: {
+                  phone: {
+                      required: true,
+                      digits: true,
+                      rangelength: [11, 11],
+                  },
+                  password: { required: true, minlength: 6 }
+              },
+              messages: {
+
+                  phone: {
+                      required: "手机号不能为空",
+                      digits: "手机号格式错误",
+                      rangelength: "手机号长度错误",
+                  },
+                  password: {
+                      required: "密码不能为空",
+                      minlength: "密码不能小于6",
+                  }
+              }
+          });
+      });
+  });
+</script>

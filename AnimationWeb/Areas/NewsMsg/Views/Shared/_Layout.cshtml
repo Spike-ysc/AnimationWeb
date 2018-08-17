@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimationWeb</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/CSS/home.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <style>
+        #head-newspage-div {
+            background: white;
+            border-radius: 0px;
+            box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.10), 0 0 0 1px rgba(0, 0, 0, 0.04);
+        }
+
+        .newspage-msg p {
+            color: rgba(0, 0, 0, 0.87);
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 1.7em;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+   
+        @RenderBody()
+      
+</body>
+</html>

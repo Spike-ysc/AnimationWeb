@@ -1,0 +1,63 @@
+﻿@*
+    将Ajax功能保存到一个单独文件中是因为有些页面并不需要它
+    比如呈现三维图形的主界面就不需要这个文件，另外，这样也容易看出相关的代码。
+*@
+<style>
+    body {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    .accordionDemo {
+        margin-right: -15px;
+        padding-bottom: 0;
+    }
+
+        .accordionDemo :first-child {
+            margin-top: 0;
+        }
+
+        .accordionDemo .list-group {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        .accordionDemo .list-group-item {
+            font-size: 14px;
+            margin-left: -34px;
+            margin-right: -34px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+
+            .accordionDemo .list-group-item :first-child {
+                margin-top: -15px;
+            }
+
+            .accordionDemo .list-group-item :last-child {
+                margin-bottom: -15px;
+            }
+
+            .accordionDemo .list-group-item :hover {
+                background-color: #fbe77a;
+                color: red;
+            }
+
+            .accordionDemo .list-group-item:focus {
+                color: red;
+            }
+</style>
+@{
+    var ajaxOptions = new AjaxOptions
+    {
+        LoadingElementId = "loading",
+        UpdateTargetId = "bodyContent",
+        OnFailure = "OnFailure"
+    };
+    TempData["AjaxOptions"] = ajaxOptions;
+}
+<script>
+    function OnFailure(xhr, textStatus, errorThrown) {
+        $("body").html(xhr.responseText);
+    }
+</script>

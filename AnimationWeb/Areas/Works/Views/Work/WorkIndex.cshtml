@@ -1,0 +1,929 @@
+﻿
+@{
+    ViewBag.Title = "WorkIndex";
+}
+
+
+<script>
+        $(document).ready(function () {
+            $(".movie-div").hover(function () {
+                // $(this).children(".movie-black-div").children("div").animate({
+                //     opacity: '0.6'
+                // });
+                $(this).children(".movie-black-div").children("div").removeClass("movie-lettle")
+                    .addClass("movie-more");
+                $(this).children(".movie-name-div").children("p").removeClass("movie-down")
+                    .addClass("movie-up");
+                // $(this).children(".movie-name-div").children("p").animate({
+
+                //     top:'45%'
+                // });
+            });
+            $(".movie-div").mouseleave(function () {
+
+
+
+                $(this).children(".movie-black-div").children("div").removeClass("movie-more")
+                    .addClass("movie-lettle");
+                $(this).children(".movie-name-div").children("p").removeClass("movie-up")
+                    .addClass("movie-down");
+
+            });
+        });
+
+</script>
+<nav class="navbar navbar-default navbar-fixed-top" id="head-people-div" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">作品一览表</a>
+    </div>
+
+</nav>
+<div style="margin-top:64px;" class="container row text-center center-block">
+    <div style="width:100%;">
+        <h2>导演一览表</h2>
+
+        <a class="btn btn-default" href="#gongqijun"> 宫崎骏</a>
+        <a class="btn btn-default" href="#jinmin"> 金敏</a>
+        <a class="btn btn-default" href="#xinhaicheng"> 新海诚</a>
+        <a class="btn btn-default" href="#gaotianxun"> 高田勋</a>
+        <a class="btn btn-default" href="#xitianshou"> 细田守</a>
+        <hr>
+    </div>
+</div>
+<div id="gongqijun" style="padding-top:64px;" class="container row text-center center-block">
+
+
+
+    <a style="text-decoration:none;" href="#">
+        <img src="~/Images/gongqijun.jpg" class="director-img img-circle" alt="">
+        <p>
+            <b>宫崎骏</b>
+        </p>
+        <p>日本知名导演</p>
+    </a>
+    <hr>
+
+
+</div>
+
+<div class="row text-center" style="padding:0 10%; margin:0;">
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/nausica.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        风之谷
+                        <br>
+                        <small>(1984)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>风之谷</p>
+            </div>
+
+        </div>
+    </a>
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/laputa.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        天空之城
+                        <br>
+                        <small>(1986)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>天空之城</p>
+            </div>
+
+        </div>
+    </a>
+
+
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/totoro.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        龙猫
+                        <br>
+                        <small>(1988)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>龙猫</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/majonotakkyubin.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        魔女宅急便
+                        <br>
+                        <small>(1989)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>魔女宅急便</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/kurenainobuta.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        红猪
+                        <br>
+                        <small>(1992)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>红猪</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/mononokehime.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        幽灵公主
+                        <br>
+                        <small>(1997)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>幽灵公主</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/chihiro.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        千与千寻
+                        <br>
+                        <small>(2001)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>千与千寻</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/howl.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        哈尔的移动城堡
+                        <br>
+                        <small>(2004)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>哈尔的移动城堡</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/ponyo.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        悬崖上的金鱼公主
+                        <br>
+                        <small>(2008)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>悬崖上的金鱼公主</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/kazetachinu.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        起风了
+                        <br>
+                        <small>(2013)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>起风了</p>
+            </div>
+
+        </div>
+    </a>
+
+
+
+
+
+</div>
+<hr>
+
+
+
+
+
+<div id="jinmin" class="container row text-center center-block" style="padding-top:64px;">
+
+    <a style="text-decoration:none;" href="#">
+        <img src="~/Images/jinmin.png" class="director-img img-circle" alt="">
+        <p>
+            <b>金敏</b>
+        </p>
+        <p>日本知名导演</p>
+    </a>
+    <hr>
+
+
+</div>
+
+
+<div class="row text-center" style="padding:0 10%; margin:20px 0 ;">
+
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/今敏/未麻的部屋.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        未麻的部屋
+                        <br>
+                        <small>(1997)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>未麻的部屋</p>
+            </div>
+
+        </div>
+    </a>
+
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/今敏/千年女优.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        千年女优
+                        <br>
+                        <small>(1984)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>千年女优</p>
+            </div>
+
+        </div>
+    </a>
+
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/今敏/东京教父.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        东京教父
+                        <br>
+                        <small>(2003)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>东京教父</p>
+            </div>
+
+        </div>
+    </a>
+
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/今敏/妄想代理人.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        妄想代理人
+                        <br>
+                        <small>(2004)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>妄想代理人</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/今敏/盗梦侦探.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        盗梦侦探
+                        <br>
+                        <small>(2006)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>盗梦侦探</p>
+            </div>
+
+        </div>
+    </a>
+
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/今敏/梦想机械.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        梦想机械
+                        <br>
+                        <small>(2006)</small>
+                        <br>
+                        <small>未完成</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>梦想机械</p>
+            </div>
+
+        </div>
+    </a>
+
+
+</div>
+
+
+
+
+<div id="xinhaicheng" class="container row text-center center-block" style="padding-top:64px;">
+
+    <a style="text-decoration:none;" href="#">
+        <img src="~/Images/poster/新海诚/新海诚1.jpeg" class="director-img img-circle" alt="">
+        <p>
+            <b>新海诚</b>
+        </p>
+        <p>日本知名导演</p>
+    </a>
+    <hr>
+
+
+</div>
+
+
+<div class="row text-center" style="padding:0 10%; margin:20px 0 ;">
+
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/新海诚/星之声.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        星之声
+                        <br>
+                        <small>(2002)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>星之声</p>
+            </div>
+
+        </div>
+    </a>
+
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/新海诚/云之彼端_约定的地方.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        云之彼端,约定的地方
+                        <br>
+                        <small>(2004)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>云之彼端,约定的地方</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/新海诚/秒速5厘米.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        秒速5厘米
+                        <br>
+                        <small>(2007)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>秒速5厘米</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/新海诚/追逐繁星的孩子.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        追逐繁星的孩子
+                        <br>
+                        <small>(2011)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>追逐繁星的孩子</p>
+            </div>
+
+        </div>
+    </a>
+
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/新海诚/言叶之庭.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        言叶之庭
+                        <br>
+                        <small>(2013)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>言叶之庭</p>
+            </div>
+
+        </div>
+    </a>
+
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/新海诚/你的名字.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        你的名字
+                        <br>
+                        <small>(2016)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>你的名字</p>
+            </div>
+
+        </div>
+    </a>
+
+
+
+</div>
+
+
+<div id="gaotianxun" class="container row text-center center-block" style="padding-top:64px;">
+
+    <a style="text-decoration:none;" href="#">
+        <img src="~/Images/gtx.jpg" class="director-img img-circle" alt="">
+        <p>
+            <b>高田勋</b>
+        </p>
+        <p>动画电影导演、制作人</p>
+    </a>
+    <hr>
+
+
+</div>
+
+
+<div class="row text-center" style="padding:0 10%; margin:20px 0 ;">
+
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/高田勋/太阳王子.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        太阳王子 霍尔斯的大冒险
+                        <br>
+                        <small>(1968)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>太阳王子 霍尔斯的大冒险</p>
+            </div>
+
+        </div>
+    </a>
+
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/高田勋/熊猫家族.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                       熊猫家族
+                        <br>
+                        <small>(1972)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>熊猫家族</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/高田勋/小麻烦千惠.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                       小麻烦千惠剧场版
+                        <br>
+                        <small>(1981)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>小麻烦千惠剧场版</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/高田勋/大提琴手高修.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        大提琴手高修
+                        <br>
+                        <small>(1982)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>大提琴手高修</p>
+            </div>
+
+        </div>
+    </a>
+
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/高田勋/萤火虫之墓.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        萤火虫之墓
+                        <br>
+                        <small>(1988)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>萤火虫之墓</p>
+            </div>
+
+        </div>
+    </a>
+
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/高田勋/岁月的童话.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        岁月的童话
+                        <br>
+                        <small>(1991)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>岁月的童话</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/高田勋/平河狸合战.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        平成狸合战
+                        <br>
+                        <small>(1994)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>平成狸合战</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/高田勋/我的邻居山田君.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        我的邻居山田君
+                        <br>
+                        <small>(1991)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>我的邻居山田君</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/高田勋/辉夜姬物语.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        辉夜姬物语
+                        <br>
+                        <small>(2013)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>辉夜姬物语</p>
+            </div>
+
+        </div>
+    </a>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div id="xitianshou" class="container row text-center center-block" style="padding-top:64px;">
+
+    <a style="text-decoration:none;" href="#">
+        <img src="~/Images/poster/细田守/xitianshou.jpg" class="director-img img-circle" alt="">
+        <p>
+            <b>细田守</b>
+        </p>
+        <p>日本知名导演</p>
+    </a>
+    <hr>
+
+
+</div>
+
+
+<div class="row text-center" style="padding:0 10%; margin:20px 0 ;">
+
+
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/细田守/ONE_PIECE_祭典男爵与神秘岛.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        ONE PIECE <br> 祭典男爵与神秘岛
+                        <br>
+                        <small>(2005)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p> 祭典男爵与神秘岛</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="/Home/ToMsg?Msgid=theme1">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/细田守/穿越时空的少女.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        穿越时空的少女
+                        <br>
+                        <small>(2006)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>穿越时空的少女</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/细田守/夏日大作战.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        夏日大作战
+                        <br>
+                        <small>(2009)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>夏日大作战</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/细田守/狼的孩子雨与雪.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        狼的孩子雨与雪
+                        <br>
+                        <small>(2012)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>狼的孩子雨与雪</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="col-md-3 col-sm-4 col-xs-6 movie-div ">
+            <img src="~/Images/poster/细田守/怪物之子.jpg" style="width:100%; " alt="">
+            <div class="movie-black-div">
+                <div style="color:white; padding-top:50%;" class="black-div">
+                    <p style="font-size:25px;">
+                        怪物之子
+                        <br>
+                        <small>(2015)</small>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center movie-name-div">
+                <p>怪物之子</p>
+            </div>
+
+        </div>
+    </a>
+
+
+
+</div>
+<hr>
+<div class="container row text-center center-block">
+    <div style="width:100%;">
+
+        <a class="btn btn-default" href="#gongqijun"> 宫崎骏</a>
+        <a class="btn btn-default" href="#jinmin"> 金敏</a>
+        <a class="btn btn-default" href="#xinhaicheng"> 新海诚</a>
+        <a class="btn btn-default" href="#gaotianxun"> 高田勋</a>
+        <a class="btn btn-default" href="#xitianshou"> 细田守</a>
+        <hr>
+    </div>
+</div>
+
+
+<!-- foot部分 -->
+<footer class="bs-docs-footer" role="contentinfo">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 ">
+                <h4>参考链接</h4>
+                <ul class="list-inline">
+                    <li><a href="http://www.ghibli.jp/">スタジオジブリ｜STUDIO GHIBLI</a></li>
+                    <li><a href="https://news.google.com/news/?gl=US&ned=us&hl=en">Google News</a></li>
+                    <li><a href="https://www.google.com/culturalinstitute/beta/">Google Arts & Culture</a></li>
+                    <li><a href="http://v3.bootcss.com/">Bootstrap中文网</a></li>
+                    <li><a href="https://www.android.com/">Android</a></li>
+
+                </ul>
+            </div>
+
+        </div>
+        <div>
+            <ul class="list-inline small">
+                <li>© 2017 ysc</li>
+                <li>·</li>
+                <li>本网页内容均来自互联网，对任何法律问题及风险不承担任何责任</li>
+
+            </ul>
+        </div>
+    </div>
+</footer>
+
+
+
+
+

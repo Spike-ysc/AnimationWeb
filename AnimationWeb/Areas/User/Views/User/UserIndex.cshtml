@@ -1,0 +1,48 @@
+﻿@model IEnumerable<AnimationWeb.Areas.User.Models.UserTable>
+
+
+<div style="padding:20px;">
+    <h2 class="sub-header">用户信息</h2>
+    <div class="table-responsive">
+
+        <table class="table my-table table-striped">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>姓名</th>
+                    <th>邮箱/手机号</th>
+                    <th>密码</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.password)
+                        </td>
+                        <td>
+                            @Html.ActionLink("编辑", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("删除", "Delete", new { id = item.Id })
+                            @*<button type="button" class="btn change-btn btn-sm btn-danger">更改密码</button>
+                                <button type="button" class="btn btn-sm delect-btn btn-danger">删除用户</button>*@
+                        </td>
+                        <td></td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+
+</div>

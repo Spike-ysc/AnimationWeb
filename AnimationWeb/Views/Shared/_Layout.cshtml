@@ -1,0 +1,393 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimationWeb</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/CSS/home.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+    <style>
+               .head-a:hover{
+             background: red;
+             color: #333;
+         }
+                   .home-nav {
+              background: hsla(0,0%,100%,.25);
+              padding-right:30px;   
+
+        }
+        .pic img{
+            max-height:100%;
+        }
+  
+
+
+    </style>
+    <script>
+        var index = 1;
+        var timer;
+        var login = "@ViewBag.login";
+        $(document).ready(function () {
+          
+            $(document).click(function () {
+                
+                $("#user-msg-div").css("display","none");
+            });
+            $("#user-head").click(function () {
+               
+                event.stopPropagation();
+                $("#user-msg-div").css("display", "block");
+            });
+
+            if(login == "yes"){
+                $("#user-head").css("display","block");
+                $("#login-btn").css("display","none");
+            }else{
+                $("#user-head").css("display","none");
+                $("#login-btn").css("display","block");
+            }
+
+            // $("")
+            // if($(window).width()>100){
+            //     alert($(window).height());
+            //     // alert($(window).width()); //浏览器时下窗口可视区域宽度
+            //     // alert($(document).width());//浏览器时下窗口文档对于象宽度
+            //     alert($(document.body).width());//浏览器时下窗口文档body的高度
+            //     // alert($(document.body).outerWidth(true));
+            //     $("#showtome").text( $("window.body").width+$("document.body").outerHeight(true)+$("window").width);
+            // }
+
+
+            // 设置轮播图的高度自适应
+            $(".carosule").css("height", $(window).height() * 0.7);
+
+            //  为作品部分设置动态效果
+            $(".head-div").hover(function () {
+                //alert("yes");
+                $(this).children(".head-bg-img").removeClass("to-small")
+                    .addClass("to-big");
+
+                $(this).children(".head-black-bg").removeClass("to-lettle")
+                    .addClass("to-more");
+            });
+            $(".head-div").mouseleave(function () {
+                //alert("yes");
+                $(this).children(".head-bg-img").removeClass("to-big")
+                    .addClass("to-small");
+                $(this).children(".head-black-bg").removeClass("to-more")
+                    .addClass("to-lettle");
+
+            });
+
+            //轮播图简单实现
+
+            var $_picn = $(".pic").length;
+            if ($_picn > 1) {
+                $(".pic").eq(0).show().siblings(".pic").hide();
+                $('.li-tab').eq(0).addClass('li-change-bg').siblings('.li-tab').removeClass('li-change-bg');
+            }
+            showTime();
+
+            $(".li-tab").hover(function () {
+                index = $(this).index();
+                Show();
+                clearInterval(timer);
+            }, function () {
+                showTime();
+            });
+            // setInterval(function () {
+            //     $(".pic").eq(index).fadeIn(500).siblings(".pic").fadeOut(500);
+            //     index++;
+            //     if (index == $_picn) { index = 0; }
+            // }, 5000);
+
+        });
+        function showTime() {
+            //定时器
+            timer = setInterval(function () {
+                //调用一个Show()函数
+                Show();
+                index++;
+                //当图片是最后一张的后面时，设置图片为第一张
+                if (index == 3) {
+                    index = 0;
+                }
+            }, 5000);
+        }
+
+
+        //创建一个Show函数
+        function Show() {
+            //在这里可以用其他jquery的动画
+            $('.pic').eq(index).fadeIn(500).siblings('.pic').fadeOut(500);
+
+            //给.tab创建一个新的Class为其添加一个新的样式，并且要在css代码中设置该样式
+            $('.li-tab').eq(index).addClass('li-change-bg').siblings('.li-tab').removeClass('li-change-bg');
+
+            /*
+            * css中添加的代码：
+            * .bg{ background-color: #f00; }
+            * */
+        }
+
+
+
+
+
+        // navbar在轮播图以下显示为白色背景，在轮播图中显示为透明背景
+        var maxScrollTop = $(window).height() * 0.7;
+        $(window).scroll(maxScrollTop, function (event) {
+            var $me = $(this);
+            if ($me.scrollTop() > event.data) {
+                // alert("yes");
+                $('.home-nav').css({
+                    "background": "white",
+                    "box-shadow": "0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2)"
+                });
+                $('.head-ul a').css("color", "black");
+
+                $('.home-nav').animate("width", "150px");
+            } else {
+                $('.home-nav').css({
+                    "background": "hsla(0,0%,100%,.25)",
+                    "box-shadow": "0 2px 2px 0 rgba(0, 0, 0, 0.0), 0 3px 1px -2px rgba(0, 0, 0, 0), 0 1px 5px 0 rgba(0, 0, 0, 0.0)"
+                });
+                $('.head-ul a').css("color", "white");
+                $('.myBtn').css("color", "black");
+            }
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <!-- navbar 顶部菜单栏 只有在xs和sm的屏幕下才显示 -->
+    <div class="head-nav visible-xs visible-sm ">
+
+        <nav class="navbar navbar-default" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="news.html">新闻</a></li>
+                    <li><a href="people.html">作品</a></li>
+                    <li><a href="theme.html">主题</a></li>
+                    <!-- <a href="userMsg.html">用户管理</a> -->
+                    <li>
+                        <a data-toggle="modal" href='#modal-id-xs'>用户管理</a>
+                        <div class="modal fade" id="modal-id-xs">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Modal title</h4>
+                                    </div>
+                                    <div class="modal-body">
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li><a href="login.html">登录</a></li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </div>
+
+
+    @*在大于sm的页面显示*@
+    <div class="head-nav hidden-xs hidden-sm">
+        <nav class="navbar home-nav navbar-fixed-top" role="navigation">
+            <!-- <nav class="navbar navbar-inverse" role="navigation"> -->
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+                <ul class="nav navbar-nav navbar-right head-ul">
+                    <li>
+                        @Html.ActionLink("新闻", "NewsIndex", "News", new { area = "News" }, new {@class= "head-a ", target = "_blank" })
+                        @*<a class="nav-link-a" href="news.html" target="_blank">新闻</a>*@
+                    </li>
+                    <li>
+                        @Html.ActionLink("作品", "WorkIndex", "Work", new { area = "Works" }, new { @class = "head-a ", target = "_blank" })
+                    </li>
+                    <li>
+
+                        @Html.ActionLink("主题", "ThemeIndex", "Theme", new { area = "Theme" }, new { @class = "head-a ", target = "_blank" })
+                  
+                    </li>
+                    <li>
+                        @*@Html.ActionLink("用户管理", "UserIndex", "User", new { area = "User" }, new { @class = "head-a " })*@
+                      
+                        <!-- 管理员登录模态框 -->
+                         <a  data-toggle="modal" class="head-a" href='#modal-id-md'>用户管理</a> 
+
+
+
+                    </li>
+                    <li>
+                        @Html.ActionLink("登录", "LoginIndex", "Login", new { area = "Login" }, new { @class = "head-a ", id ="login-btn"})
+                        @*<a href="login.html">登录</a>*@
+
+                        <img id="user-head" style="display:none" src="~/Images/xys.jpg" class="user-head-img img-circle img-responsive" alt="">
+                        <div id="user-msg-div" style="display:none;">
+
+                            <img src="images/xys.jpg" style="width:100px; height:100px; padding:0;" class="col-sm-5 img-responsive" alt="">
+                            <div class="col-sm-7">
+
+                                <p>@ViewBag.name</p>
+                                <p>@ViewBag.phone</p>
+
+                                <a class="myBtn" href="/Home/userMsg">个人信息</a>
+
+                            </div>
+
+                            <div class="col-sm-12" style="padding-top:10px;">
+                                <hr>
+                                <a href="/Home/addUser" class="myBtn" style="float:left;">添加用户</a>
+                                <a href="/Home/loginOut" class="myBtn" style="float:right;">退出登录</a>
+                                @*@Html.ActionLink("添加用户", "LoginIndex", "Login", new { area = "Login" }, new { @class = "myBtn" })
+                                @Html.ActionLink("退出登录", "LoginIndex", "Login", new { area = "Login" }, new { @class = "myBtn" })*@
+                                @*<a href="addUser" class="btn btn-default" >添加用户</a>
+                                <button type="button" style="float:left;"  onClick="addUser" class="btn btn-default">添加用户</button>*@
+
+                              
+                            </div>
+
+
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </div>
+    <!-- 管理员登录的模态框，放到navbar中不显示，所以移到这里 -->
+    <div class="modal fade" id="modal-id-md">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">管理员登录 </h4>
+                </div>
+                <div class="modal-body">
+
+                    <form action="/Home/AdminLogin" method="POST" role="form">
+
+
+                        <div class="form-group text-center">
+                            <input type="text" class="form-control" name="phone" style="margin:10px 0 20px 0;  " id="" placeholder="管理员账号">
+                            <input type="password" name="password" class="form-control" id="" placeholder="密码">
+
+                            <div class="text-center" style="margin:20px 0;">
+                                @*<a href="" class="btn btn-primary ">确定</a>
+                                <a class="btn btn-danger" data-dismiss="modal">取消</a>*@
+                                <button type="submit" class="btn btn-primary">确定</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+                @*<div class="modal-footer">
+                    <button type="button" class="btn btn-primary">确定</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                </div>*@
+            </div>
+        </div>
+    </div>
+
+
+    <div class="carosule hidden-xs hidden-sm">
+        <div class="pic-show">
+            <div class="pic">
+                <img src="~/Images/title_bg1.jpg" class="img-responsive" style="width:100%" alt="" />
+            </div>
+            <div class="pic">
+                <img src="~/Images/title_bg2.jpg" style="width:100%" alt="" />
+            </div>
+            <div class="pic">
+                <img src="~/Images/title_bg3.jpg" style="width:100%" alt="" />
+            </div>
+            <ul class="pic-tab list-inline">
+                <li class="li-tab"></li>
+                <li class="li-tab"></li>
+                <li class="li-tab"></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+        @RenderBody()
+        
+
+    <footer class="bs-docs-footer" role="contentinfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 ">
+                    <h4>参考链接</h4>
+                    <ul class="list-inline">
+                        <li><a href="http://www.ghibli.jp/">スタジオジブリ｜STUDIO GHIBLI</a></li>
+                        <li><a href="https://news.google.com/news/?gl=US&ned=us&hl=en">Google News</a></li>
+                        <li><a href="https://www.google.com/culturalinstitute/beta/">Google Arts & Culture</a></li>
+                        <li><a href="http://v3.bootcss.com/">Bootstrap中文网</a></li>
+                        <li><a href="https://www.android.com/">Android</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div>
+                <ul class="list-inline small">
+                    <li>© 2017 ysc</li>
+                    <li>·</li>
+                    <li>本网页内容均来自互联网，对任何法律问题及风险不承担任何责任</li>
+
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

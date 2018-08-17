@@ -1,0 +1,25 @@
+﻿
+@model IEnumerable<AnimationWeb.Areas.News.Models.NewsPage>
+<h3 id="top-stories">热点新闻</h3>
+@foreach (var item in Model)
+{
+    <div class="news-div  row">
+        <div class="col-sm-3 center-block">
+            <a class="news-a" href="newsPage.html">
+                <img src="@item.img" class="img-responsive center-block" style="width:60%; " alt="">
+            </a>
+        </div>
+
+        <div class="col-sm-8" style="padding:0;">
+            <a href="NewsPage?myId=@item.link" class="news-a" target="_blank">
+                <h2>@item.title</h2>
+            </a>
+            <p>@item.time</p>
+            <h4>
+                @item.decription
+            </h4>
+        </div>
+    </div>
+}
+
+

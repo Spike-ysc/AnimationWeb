@@ -1,0 +1,52 @@
+﻿
+@model AnimationWeb.Areas.User.Models.UserTable
+
+@{
+    var a1 = new { @class = "col-md-3 control-label" };
+    var a2 = "col-md-8";
+    var a3 = new { @class = "form-control" };
+    var a4 = new { @style = "color:red;" };
+}
+<div class="center-block" style="width:500px;">
+    <div class="panel panel-success">
+        <div class="panel-heading">添加新行</div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.name, a1)
+                        <div class="@a2">
+                            @Html.TextBoxFor(model => model.name, a3)
+                            @Html.ValidationMessageFor(model => model.name, "", a4)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.phone, a1)
+                        <div class="@a2">
+                            @Html.TextBoxFor(model => model.phone, a3)
+                            @Html.ValidationMessageFor(model => model.phone, "", a4)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.password, htmlAttributes: a1)
+                        <div class="@a2">
+                            @Html.EditorFor(model => model.password, a3)
+                            @Html.ValidationMessageFor(model => model.password, "", a4)
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="center-block text-center">
+                    <input type="submit" value="添加" class="btn btn-primary" />
+                    <a class="btn btn-primary" href="@Url.Action("UserIndex")" style="color:white;">取消</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

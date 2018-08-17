@@ -1,0 +1,71 @@
+﻿
+@model AnimationWeb.Areas.User.Models.UserTable
+@{
+    var a1 = new { @class = "col-md-2 control-label" };
+    var a2 = "col-md-10";
+    var a3 = new { htmlAttributes = new { @class = "form-control" } };
+    var a4 = new { @class = "text-danger" };
+}
+<style>
+    input {
+        max-width: 200px;
+    }
+</style>
+
+<div id="myModal" class="modal fade">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header btn-success">
+                    <h4 class="modal-title">编辑行</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", a4)
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Id, a1)
+                            <div class="@a2">
+                                @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                @Html.ValidationMessageFor(model => model.Id, "", a4)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.name, a1)
+                            <div class="@a2">
+                                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.name, "", a4)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.phone, a1)
+                            <div class="@a2">
+                                @Html.EditorFor(model => model.phone, a3)
+                                @Html.ValidationMessageFor(model => model.phone, "", a4)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.password, a1)
+                            <div class="@a2">
+                               @Html.EditorFor(model => model.password, a3)
+                                @Html.ValidationMessageFor(model => model.password, "", a4)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-block text-right">
+                        <input type="submit" value="确定" class="btn btn-primary" />
+                        <a class="btn btn-primary" href="@Url.Action("UserIndex")">取消</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<script>
+  //  $("#datepicker1").datepicker();
+    $("#myModal").modal();
+</script>

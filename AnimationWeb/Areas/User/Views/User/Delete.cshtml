@@ -1,0 +1,39 @@
+﻿
+@model AnimationWeb.Areas.User.Models.UserTable
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header btn-success">
+                <h4 class="modal-title">确实要删除该行吗？</h4>
+            </div>
+            <div class="modal-body">
+                <dl class="dl-horizontal">
+                    <dt> @Html.DisplayNameFor(model => model.Id) </dt>
+                    <dd> @Html.DisplayFor(model => model.Id) </dd>
+
+                    <dt> @Html.DisplayNameFor(model => model.name) </dt>
+                    <dd> @Html.DisplayFor(model => model.name) </dd>
+
+                    <dt> @Html.DisplayNameFor(model => model.phone) </dt>
+                    <dd> @Html.DisplayFor(model => model.phone) </dd>
+
+                    <dt> @Html.DisplayNameFor(model => model.password) </dt>
+                    <dd> @Html.DisplayFor(model => model.password) </dd>
+                </dl>
+            </div>
+            <div class="modal-footer">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="btn-block text-right">
+                        <input type="submit" value="删除" class="btn btn-primary" />
+                        <a class="btn btn-primary" href="@Url.Action("UserIndex")">取消</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $("#myModal").modal();
+</script>

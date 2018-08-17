@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻</title>
+
+    @Html.Partial("~/Views/Shared/_AreasPartialrRef.cshtml")
+    @Html.Partial("~/Views/Shared/_AreasPartialAjax.cshtml")
+    <link href="~/CSS/news.css" rel="stylesheet" />
+
+
+    @{
+        var ajaxOptions = new AjaxOptions
+        {
+            LoadingElementId = "loading",
+            UpdateTargetId = "mainWindow",
+            OnFailure = "OnFailure"
+        };
+    }
+    <style>
+        .select-click-style{
+        background:#dddddd;
+        color:black;
+        }
+    </style>
+    <script>
+
+        $(document).ready(function () {
+            $(".select-a").click(function () {
+                $(this).addClass("select-click-style").siblings('.select-a').removeClass('select-click-style');
+            });
+        });
+    </script>
+</head>
+
+
+<body style="background:#F7F7F7; ">
+    <nav class="hidden-xs navbar navbar-default navbar-fixed-top" id="head-new-div" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">news</a>
+        </div>
+
+        <span id="loding" style="display:none;" class="nav navbar-nav navbar-right ">
+            正在加载，请稍后...
+
+        </span>
+
+    </nav>
+
+    <nav class="visible-xs  navbar navbar-default navbar-fixed-top" id="head-new-div" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">news</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+            <ul class="nav navbar-nav navbar-right head-ul">
+                <li>
+                    <a href="#">热点</a>
+                </li>
+                <li>
+                    <a href="#">国内</a>
+                </li>
+                <li>
+                    <a href="#">全球</a>
+                </li>
+                <li>
+                    <a href="#">其他</a>
+                </li>
+
+            </ul>
+        </div>
+
+    </nav>
+    <div class="col-md-3 col-sm-2  fixed-style hidden-xs" style="position: fixed; margin-top:64px;">
+        <p class="section-p">节选</p>
+
+
+
+        @Ajax.ActionLink(" 热 点", "NewsIndex", new { area = "News", id = "NewsIndex" }, ajaxOptions, new { @class = "select-a select-click-style" })
+        @Ajax.ActionLink(" 国 内", "NewsIndex", new { area = "News", id = "ChinaNews" }, ajaxOptions, new { @class = "select-a" })
+        @Ajax.ActionLink(" 全 球", "NewsIndex", new { area = "News", id = "WorldNews" }, ajaxOptions, new { @class = "select-a" })
+        @Ajax.ActionLink(" 其 他", "NewsIndex", new { area = "News", id = "OtherNews" }, ajaxOptions, new { @class = "select-a" })
+
+
+
+    </div>
+
+    <div class="col-md-8 col-md-offset-3  col-sm-9  col-sm-3 row" style="margin-top:64px; margin-bottom:64px;">
+        <div id="mainWindow">
+            @RenderBody()
+        </div>
+    </div>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+
+
+
+</html>

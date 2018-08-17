@@ -1,0 +1,120 @@
+﻿    .director-img {
+            width: 150px;
+            height: 150px;
+            float: center;
+            margin: 10px 0;
+        }
+
+        .director-div p {
+            color: rgba(0, 0, 0, 0.87);
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 1.7em;
+        }
+
+        .director-div a :hover {
+            text-decoration: none;
+
+        }
+
+        .movie-div {
+            position: relative;
+            margin: 10px 0;
+        }
+
+        .movie-black-div {
+            width: 100%;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            padding: 0 15px;
+            height: 100%;
+        }
+
+        .movie-black-div div {
+            background: black;
+            opacity: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        .movie-name-div {
+            width: 100%;
+            /* position: absolute; */
+            left: 0px;
+            top: 0px;
+            padding: 0 15px;
+            height: 100%;
+        }
+
+        .movie-name-div p {
+            position: relative;
+            /* top: 70%; */
+            /* color: #eee; */
+            padding: 5px 0;
+            font-size: 16px;
+        }
+
+        @keyframes p-more {
+            from {
+                opacity: 0
+            }
+            to {
+                opacity: 0.7
+            }
+        }
+
+        @keyframes p-lettle {
+            from {
+                opacity: 0.7
+            }
+            to {
+                opacity: 0
+            }
+        }
+
+        @keyframes p-up {
+            form {
+                opacity: 1
+            }
+            to {
+                opacity: 0;
+            }
+
+        }
+
+        @keyframes p-down {
+            form {
+                top: 65%
+            }
+            to {
+                top: 70%
+            }
+
+        }
+
+        .movie-more {
+            animation: p-more 0.5s;
+            animation-fill-mode: forwards;
+        }
+
+        .movie-lettle {
+            animation: p-lettle 0.5s;
+            animation-fill-mode: forwards;
+        }
+
+        .movie-up {
+            animation: p-up 0.5s;
+            animation-fill-mode: forwards;
+        }
+
+        .movie-down {
+            animation: p-down 0.5s;
+            animation-fill-mode: forwards;
+        }
+
+        #head-people-div {
+            background: white;
+            border-radius: 0px;
+            box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.10), 0 0 0 1px rgba(0, 0, 0, 0.04);
+        }

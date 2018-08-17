@@ -1,0 +1,50 @@
+﻿@Styles.Render("~/Content/themes/base/jquery-ui")
+@*
+    下面代码是将文件直接拖放到此处添加的，不是手工键入的
+    不要用styles.rendr实现，否则所有3D例子加载时都会出现界面短暂停顿的现象
+*@
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+<link href="~/Content/themes/base/all.css" rel="stylesheet" />
+<style>
+    body {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    #demo {
+        margin-right: -15px;
+    }
+
+        #demo .list-group-item {
+            font-size: 14px;
+            margin-left: -33px;
+            margin-right: -33px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+
+            #demo .list-group-item:first-child {
+                margin-top: -15px;
+            }
+
+            #demo .list-group-item:last-child {
+                margin-bottom: -15px;
+            }
+</style>
+
+@*
+
+    由于子视图中不能使用@section指定脚本放置的位置， 为了能在视图以及分部视图中都能
+    调用布局页引用的脚本，需要将这些引用放到head块内，而不是放到body块的末尾。
+*@
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jquery-ui")
+@*Ajax帮助器是利用jquery的ajax实现的，所以要添加下面的引用*@
+@Scripts.Render("~/bundles/jquery-unobtrusive-ajax")
+@*输入验证需要添加下面的引用*@
+@Scripts.Render("~/bundles/jquery/validate")
+@*将下面的引用放到最后，是为了确保在调用Bootstrap之前先调用jQuery*@
+@Scripts.Render("~/bundles/bootstrap")

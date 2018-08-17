@@ -1,0 +1,80 @@
+﻿        .msg-title-div {
+            background: #2B383F;
+            color: white;
+            padding: 10px 0 40px 0;
+        }
+
+        .msg-paper {
+            /* width: 75%; */
+            padding-top: 24px;
+            /* padding: 24px; */
+        }
+
+        .msg-paper p {
+            color: rgba(0, 0, 0, 0.87);
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 1.7em;
+            text-align: left;
+        }
+
+        .msg-p-title {
+            padding: 10px 20px;
+            margin: 20px 0px;
+            background: #2B383F;
+        }
+
+        .msg-duanluo p {
+            color: rgba(0, 0, 0, 0.87);
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 1.7em;
+            text-align: left;
+        }
+
+        .talk-img {
+            width: 50px;
+            height: 50px;
+            float: right;
+        }
+
+        .media-name {
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+            line-height: 24px;
+        }
+
+        .media-word {
+            min-height: 22px;
+            margin: 8px 0;
+            font-size: 15px;
+            line-height: 24px;
+            word-break: break-word;
+        }
+
+        .media {
+            margin-top: 60px;
+        }
+        .auto-input {
+                width: 88%;
+                min-height: 34px;
+                max-height: 500px;
+                _height: 20px;
+                margin: 0 20px 0 10px;
+                outline: 0;
+                font-size: 16px;
+                word-wrap: break-word;
+                overflow-x: hidden;
+                overflow-y: auto;
+                _overflow-y: visible;
+                padding: 6px 12px;
+                font-size: 14px;
+                line-height: 1.42857143;
+                color: #555;
+                background-color: #fff;
+                background-image: none;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                float: left;
+            }
