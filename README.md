@@ -22,6 +22,10 @@
 
 * ## 3、项目截图
 
+
+    ### 首页页面
+    ![](https://github.com/Spike-ysc/AnimationWeb/raw/master/AnimationWeb/Images/首页.png)
+
     ### 用户管理页面
     ![](https://github.com/Spike-ysc/AnimationWeb/raw/master/AnimationWeb/Images/用户管理.png)
     
@@ -37,5 +41,3 @@
     ### 作品页面
     ![](https://github.com/Spike-ysc/AnimationWeb/raw/master/AnimationWeb/Images/作品.png)
     
-    ### 首页页面
-    ![](https://github.com/Spike-ysc/AnimationWeb/raw/master/AnimationWeb/Images/首页.png)
